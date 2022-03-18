@@ -1,0 +1,85 @@
+.order-history {
+    position: relative;
+    top: 100px;
+    background: rgb(242, 242, 242);
+    height: 100vh;
+
+    &__padding {
+        padding: 30px 0;
+    }
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 30px;
+    }
+
+    &__label {
+        display: flex;
+        border-bottom: 1px solid #ebebeb;
+        &__shopee {
+            cursor: default;
+            background-color: #fff;
+            margin-bottom: -1px;
+            border: 1px solid #ebebeb;
+            border-bottom: 0;
+            color: #cf2127;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 5px 25px;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+
+    &__table {
+        background: #fff;
+        padding: 20px 30px;
+        border: 1px solid #ebebeb;
+        border-top: 0;
+
+        &__list {
+            display: flex;
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: center;
+            justify-content: space-between;
+        } 
+        &__item {
+            display: flex;
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+            min-width: 0;
+            margin: 0 15px;
+
+            &--name {
+                padding-right: 10px;
+            }
+            &--select {
+                // border: none;
+                outline: none;
+            }
+            &--btn {
+                padding: 0.29rem 0.7rem;
+                font-size: .813rem;
+                line-height: 1.5;
+                border-radius: 0.2rem;
+                color: #fff;
+                background-color: #0288d1;
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                user-select: none;
+                border: 1px solid #0288d1;
+                cursor: pointer;
+            }
+        }
+
+        &__info {
+            padding: 40px 0;
+            color: red;
+            font-size: 16px;
+        }
+    }
+}

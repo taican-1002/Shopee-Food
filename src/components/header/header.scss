@@ -1,0 +1,318 @@
+@use "../../scss/" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: #fff;
+  height: 70px;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    min-height: 42px;
+    height: 100%;
+
+    @include tablet {
+      display: flex;
+      margin: auto;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .header-user {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      @include mobile {
+        margin-left: 62px;
+      }
+
+      &:hover .header-user-list {
+        display: block;
+      }
+
+      i {
+        padding-left: 10px;
+      }
+    }
+
+    .header-user::before {
+      position: absolute;
+      content: "";
+      width: 100px;
+
+      top: 0;
+      bottom: 0;
+
+      background-color: transparent;
+      height: 100px;
+    }
+
+    .header-user img {
+      width: 36px;
+      height: 36px;
+      margin-top: 0;
+      padding-top: 0;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .header-user-list {
+      left: -48px;
+      width: 170px;
+      top: 55px;
+      position: absolute;
+      background-color: white;
+      border-radius: 8px;
+      transition: all 0.4s linear;
+      display: none;
+      color: #ee4d2d;
+      font-weight: 500;
+
+      @include tablet {
+        left: -68px;
+      }
+      @include mobile {
+        left: -75px;
+        width: 150px;
+      }
+    }
+
+    .header-user-item {
+      font-size: 16px;
+      border-top: 1px solid rgba(33, 37, 41, 0.15);
+      padding: 15px;
+      cursor: pointer;
+      border-bottom: 1px solid #fff;
+      transition: all 0.3s ease;
+      @include mobile {
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+
+    .header-user-item a {
+      cursor: pointer;
+    }
+
+    &__logo {
+      height: 30px;
+      max-width: unset !important;
+      @include tablet {
+        // margin-right: 20px;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &__selected {
+      background: #f0f0f0;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      margin: 0 50px;
+
+      @include tablet {
+        margin: 0;
+      }
+    }
+    &__menu-mobile {
+      display: none;
+      @include tablet {
+        display: block;
+        font-size: 24px;
+        padding-top: 4px;
+        order: 0;
+      }
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      width: 60%;
+      height: 100%;
+
+      @include tablet {
+        display: none;
+        width: unset;
+        position: absolute;
+        left: 102px;
+        top: -4px;
+      }
+
+      li {
+        cursor: pointer;
+        padding: 25px 12px 21px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 18px;
+        border-bottom: 4px solid transparent;
+        transition: all 0.3s ease;
+
+        @include tablet {
+          border-bottom: 1px solid #ccc;
+          background-color: white;
+          position: relative;
+          top: 74px;
+          left: -88px;
+          text-align: center;
+          width: 150px;
+        }
+
+        &.active {
+          color: #ee4d2d;
+          font-weight: 700;
+          border-bottom-color: #ee4d2d;
+        }
+      }
+    }
+
+    &__search {
+      margin-right: 30px;
+      cursor: pointer;
+
+      @include tablet {
+        margin: unset;
+      }
+      @include mobile {
+        display: none;
+      }
+
+      i {
+        font-size: 24px;
+        padding-top: 8px;
+      }
+
+      &__modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        outline: 0;
+        padding-right: 17px;
+
+        .overlay {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #000;
+          opacity: 0.8;
+          z-index: -1;
+          height: 100%;
+        }
+
+        &__content {
+          width: 70%;
+          max-width: 1140px;
+          transform: translate(0);
+          z-index: 100;
+          color: white;
+          margin: 70px auto;
+          i {
+            float: right;
+            color: #fff;
+            cursor: pointer;
+            text-shadow: none;
+            font-size: 40px;
+            line-height: 14px;
+            position: absolute;
+            top: -22px;
+            left: auto;
+            right: 0;
+            padding: 2px 7px 9px;
+            z-index: 99;
+            font-weight: 400;
+            opacity: 1;
+          }
+          &--bg {
+            text-align: center;
+            background-image: url("../../asset/bg-search.png");
+            background-position: top;
+            background-repeat: no-repeat;
+            padding-top: 140px;
+          }
+          input {
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+            border: 0;
+            border-bottom: 2px solid #6d6f71;
+            background-color: transparent;
+            transition: all 0.2s;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      width: 130px;
+      @include tablet {
+        // margin-left: 30px !important;
+      }
+      @include mobile {
+        width: 0;
+      }
+    }
+
+    &__languages {
+      padding: 0 20px;
+      @include tablet {
+        display: none;
+      }
+
+      &__flag--usa,
+      &__flag--vn {
+        display: flex;
+      }
+
+      &--usa {
+        background-image: url(../../asset//usa.png);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+      }
+      &--vn {
+        background-image: url(../../asset//vn.png);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+      }
+      &--vn,
+      i {
+        position: relative;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.toggle {
+  display: block;
+  width: 0;
+  margin-right: unset;
+}

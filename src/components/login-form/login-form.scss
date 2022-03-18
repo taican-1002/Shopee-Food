@@ -1,0 +1,202 @@
+@use '../../scss/' as *;
+
+.login-form {
+    width: 600px;
+    margin: auto;
+    clear: both;
+    padding: 30px;
+    background-color: #fff;
+    margin-top: 40px;
+    position: relative;
+    top: 69px;
+    
+    @include mobile {
+        width: 345px;    
+    }
+
+    &__not {
+        font-size: 20px;
+        color: #464646;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .sign-up {
+        &__title {
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 17px;
+        }
+
+        &__social {
+            margin-bottom: 35px;
+            &__btn {
+                color: #fff;
+                text-align: center;
+                text-transform: uppercase;
+                width: 100%;
+                position: relative;
+                margin-bottom: 10px;
+                padding: 7px 0;
+                border-radius: 3px;
+                cursor: pointer;
+                border: none;
+            }
+        }
+        &__google {
+            background-color: #ff5252;
+            i{
+                position: absolute;
+                top: 2px;
+                left: 5px;
+                background-color: #fff;
+                border-radius: 50%;
+                font-size: 15px;
+                width: 25px;
+                height: 25px;
+                text-align: center;
+                line-height: 25px;
+                color: #ff5252;
+            }
+        }
+        &__facebook{
+            background-color: #187caa;
+            i {
+                position: absolute;
+                top: 2px;
+                left: 5px;
+                background-color: #fff;
+                border-radius: 50%;
+                font-size: 15px;
+                width: 25px;
+                height: 25px;
+                text-align: center;
+                line-height: 25px;
+                color: #187caa;
+            }
+        }
+    }
+}
+
+.login {
+        margin-top: 72px;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction: column;
+
+        @include mobile {
+            margin-top: 46px;
+        }
+        
+
+    &__input {
+        border: 1px solid #959595;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        width: 100%;
+
+        &__username {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            width: 100%;
+            display: flex;
+            border-bottom: 1px solid #959595;
+            
+
+            i {
+                font-size: 20px;
+                padding-left: 10px;
+            }
+            
+
+            input {
+                font-size: 18px;
+                border: 0;
+                border-radius: 0;
+                width: 100%;
+                padding: 10px 10px 9px 12px;
+            }
+
+        }
+
+        &__password {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            width: 100%;
+            display: flex;
+
+            i {
+                font-size: 20px;
+                padding-left: 10px;
+            }
+            
+
+            input {
+                font-size: 18px;
+                border: 0;
+                border-radius: 0;
+                width: 100%;
+                padding: 10px 10px 9px 12px;
+            }
+
+        }
+
+    }
+    &__check-login {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        input {
+            width: inherit;
+            margin-top: 10px;
+        }
+        &__name {
+            margin-bottom: 0;
+            padding-left: 5px;
+            font-size: 18px;
+        }
+        &__right {
+            color: #0288d1;
+            text-decoration: none;
+            font-size: 18px;
+            background-color: transparent;
+            cursor: pointer;
+            &:hover {
+                color: #015785;
+            }
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 6px 0;
+        text-transform: uppercase;
+        background-color: #0288d1;
+        color: white;
+        border: 1px solid #0288d1;
+        margin-top: 20px;
+        cursor: pointer;
+        padding: 14px 0;
+    }
+
+    &__policy {
+        margin-top: 10px;
+        u{
+            padding-left: 6px;
+            cursor: pointer;
+            color: #0495ba;
+            border-bottom: 2px solid;
+            text-decoration: none !important;
+        }
+    }
+}
